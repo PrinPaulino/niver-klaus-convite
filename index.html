@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <link href="https://fonts.cdnfonts.com/css/minecraft-3" rel="stylesheet">       
+    <link href="estilo.css" rel="stylesheet">
+</head>
+<body background="fundoM.png">
+<main class="container">
+   <div class="titulo-com-baloes">
+  <img src="balao1.png" alt="Balão decorativo" class="balao-flutuante">
+  <h1 class="titulo">Klaus <br> faz <br> 6 anos</h1>
+</div>
+  
+<div class="video-container">
+  <video autoplay controls>
+    <source src="Colagem Niver Klaus.mp4" type="video/mp4">
+    Seu navegador não suporta vídeo HTML5.
+  </video>
+</div>
+
+
+    <p class="paragrafo">
+        Meu aniversário está chegando e você é meu(a) convidado(a) para este dia especial!<br>
+        <strong style="color:#28a745">Venha celebrar comigo! 🥳</strong> 
+    </p>
+
+    <!-- Imagens flutuantes -->
+    <div class="imagem-container">
+        <img src="Foto1.jpeg" class="float-img" alt="Balão 1">
+        <img src="Foto2.jpeg" class="float-img" alt="Balão 2">
+        <img src="Foto3.jpeg" class="float-img" alt="Balão 3">
+         <img src="Foto4.jpeg" class="float-img" alt="Balão 1">
+        <img src="Foto5.jpeg" class="float-img" alt="Balão 2">
+        <img src="Foto6.jpeg" class="float-img" alt="Balão 3">
+         <img src="Foto7.jpeg" class="float-img" alt="Balão 1">
+        <img src="Foto8.jpeg" class="float-img" alt="Balão 2">
+        <img src="Foto9.jpg" class="float-img" alt="Balão 3">
+    </div>
+
+<div class="contador">
+  <h2>Faltam:</h2>
+  <div id="contador-tempo">Carregando...</div>
+</div>
+
+    <p class="novoparagrafo">
+       📌 Salve The Date: 11/10/2025<br>
+      ⌚ Horário: 19h!<br>
+      📍 Local: Espaço pôr do sol, Rua Potyra 631 - Icaivera/Betim
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d938.1201143544783!2d-44.15883333048563!3d-19.8619242375161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6ebc204c29839%3A0x13cdbd34feaf59cd!2sR.%20Potira%2C%20631%20-%20Icaivera%2C%20Betim%20-%20MG%2C%2032611-252!5e0!3m2!1spt-BR!2sbr!4v1752262615229!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </p>
+
+    <div class="mapa-link">
+        <a href="https://www.google.com.br/maps/place/R.+Potira,+631+-+Icaivera,+Betim+-+MG" target="_blank">
+            <button class="btn-mapa">Veja o endereço no MAPA</button>
+        </a>
+    </div>
+
+<p class="paragrafo"> ✨🎈 Sugestões de presente: 🎈🎉</p>
+<ul class="presentes">
+  <li> 👚 Tamanho de roupa: 6</li>
+  <li> 👟 Tamanho de sapato: 29</li>
+</ul>
+<p class="paragrafo destaque">Eu amo brinquedos! 🧸🚗🪀</p>
+
+
+    <p class="paragrafo">Confirme sua presença preenchendo abaixo:</p>
+
+   <form 
+  action="https://docs.google.com/forms/d/e/SEU_ID_DO_FORMULARIO/formResponse"
+  method="POST" 
+  target="_blank" 
+  class="form">
+
+  <input type="Informe seu nome completo" name="entry.1117705075" placeholder="Seu nome" required>
+  <input type="email" name="entry.1412361356" placeholder="Seu e-mail (opcional)">
+  <textarea name="entry.580238685" rows="3" placeholder="Informe o nome das demais pessoas 
+  que estarão com você, por favor, informe apenas nome e sobrenome🎈"></textarea>
+  
+  <button type="submit">Confirmar Presença</button>
+</form>
+
+</main>
+
+<script>
+  function atualizarContador() {
+    const destino = new Date("2025-10-11T19:00:00").getTime();
+    const agora = new Date().getTime();
+    const distancia = destino - agora;
+
+    const el = document.getElementById("contador-tempo");
+
+    if (distancia < 0) {
+      el.innerHTML = "Já começou! 🎉";
+      return;
+    }
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    el.innerHTML = `${dias} dias, ${horas}h, ${minutos}min, ${segundos}s`;
+
+    // Reinicia a animação para cada atualização
+    el.style.animation = "none";
+    void el.offsetWidth; // força reflow
+    el.style.animation = "fadeZoom 1s ease-in-out";
+  }
+
+  setInterval(atualizarContador, 1000);
+  atualizarContador();
+</script>
+
+
+</body>
+</html>
