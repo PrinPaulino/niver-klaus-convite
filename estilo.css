@@ -57,15 +57,43 @@ body {
       margin: 20px 0;
     }
 
-    .galeria img {
-      width: 180px;
-      height: 180px;
-      border-radius: 20px;
-      object-fit: cover;
-      scroll-snap-align: center;
-      flex-shrink: 0;
-      animation: flutuar 3s ease-in-out infinite;
-    }
+    .galeria {
+  display: flex;
+  gap: 10px;              /* Espaço entre as imagens */
+  overflow-x: auto;       /* Rolagem horizontal */
+  overflow-y: hidden;     /* Esconde rolagem vertical */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Suaviza o scroll no mobile */
+  scrollbar-width: auto;  /* Mostra barra no Firefox */
+}
+
+.galeria::-webkit-scrollbar {
+  height: 8px;            /* Altura da barrinha no mobile/desktop */
+}
+
+.galeria::-webkit-scrollbar-track {
+  background: #f1f1f1;    /* Cor do fundo da barra */
+  border-radius: 10px;
+}
+
+.galeria::-webkit-scrollbar-thumb {
+  background: #888;       /* Cor da barrinha */
+  border-radius: 10px;
+}
+
+.galeria::-webkit-scrollbar-thumb:hover {
+  background: #555;       /* Cor quando passa o mouse */
+}
+
+.galeria img {
+  width: 180px;
+  height: 180px;
+  border-radius: 20px;
+  object-fit: cover;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  animation: flutuar 3s ease-in-out infinite;
+}
 
     @keyframes flutuar {
       0%, 100% {
