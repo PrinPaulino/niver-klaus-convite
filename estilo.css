@@ -49,6 +49,10 @@ body {
       border: none;
     }
 
+    audio {
+      display: none; /* Oculta o elemento de áudio */
+    }
+
     .galeria {
       display: flex;
       overflow-x: auto;
