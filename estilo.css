@@ -1,220 +1,193 @@
 body {
-      margin: 0;
-      padding: 0;
-      background: url('fundoM.png') no-repeat center center fixed;
-      background-size: cover;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-    main.container {
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 720px;
-      margin: 40px auto;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      background: url('fundoM.png') no-repeat center center fixed;
-      background-size: cover
-    }
-
-    .titulo {
-      font-family: 'Minecraft', sans-serif;
-      font-size: 3.5rem;
-      color: blue;
-      text-align: center;
-      margin-bottom: 20px;
-      font-weight: 800;
-      text-shadow: 3px 3px 0 #fff, -3px 3px 0 #fff, -3px -3px 0 #fff, 3px -3px 0 #fff;
-      background-color: #28a745;
-      border-radius: 15px;
-      padding: 15px;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 20px;
-      margin-bottom: 30px;
-    }
-
-    .video-container video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: none;
-    }
-
-    audio {
-      display: none; /* Oculta o elemento de áudio */
-    }
-
-    .galeria {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .galeria {
-  display: flex;
-  gap: 10px;              /* Espaço entre as imagens */
-  overflow-x: auto;       /* Rolagem horizontal */
-  overflow-y: hidden;     /* Esconde rolagem vertical */
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch; /* Suaviza o scroll no mobile */
-  scrollbar-width: auto;  /* Mostra barra no Firefox */
+    margin: 0;
+    padding: 0;
+    background: url('fundoM.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1f0abe;
 }
 
-.galeria::-webkit-scrollbar {
-  height: 8px;            /* Altura da barrinha no mobile/desktop */
+main.container {
+    position: relative;
+    /* necessário para posicionar as imagens nos cantos */
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 720px;
+    margin: 40px auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background: url('fundoM.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
-.galeria::-webkit-scrollbar-track {
-  background: #f1f1f1;    /* Cor do fundo da barra */
-  border-radius: 10px;
+.titulo {
+    font-family: 'Minecraft', sans-serif;
+    font-size: 3.5rem;
+    color: blue;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+    text-shadow: 3px 3px 0 #fff, -3px 3px 0 #fff, -3px -3px 0 #fff, 3px -3px 0 #fff;
+    background-color: #28a745;
+    border-radius: 15px;
+    padding: 15px;
 }
 
-.galeria::-webkit-scrollbar-thumb {
-  background: #888;       /* Cor da barrinha */
-  border-radius: 10px;
+
+/* ==== Imagens fixadas nos cantos ==== */
+
+.decoracao {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 12px;
+    animation: flutuar 3s ease-in-out infinite;
 }
 
-.galeria::-webkit-scrollbar-thumb:hover {
-  background: #555;       /* Cor quando passa o mouse */
+.decoracao.topo-esquerda {
+    top: 10px;
+    left: 10px;
 }
 
-.galeria img {
-  width: 180px;
-  height: 180px;
-  border-radius: 20px;
-  object-fit: cover;
-  scroll-snap-align: center;
-  flex-shrink: 0;
-  animation: flutuar 3s ease-in-out infinite;
+.decoracao.topo-direita {
+    top: 10px;
+    right: 10px;
 }
 
-    @keyframes flutuar {
-      0%, 100% {
+.decoracao.baixo-esquerda {
+    bottom: 10px;
+    left: 10px;
+}
+
+.decoracao.baixo-direita {
+    bottom: 10px;
+    right: 10px;
+}
+
+@keyframes flutuar {
+    0%,
+    100% {
         transform: translateY(0);
-      }
-      50% {
+    }
+    50% {
         transform: translateY(-10px);
-      }
     }
-
-    .paragrafo, .novoparagrafo {
-      font-size: 1.3rem;
-      text-align: center;
-      margin: 20px 0;
-      color: #333;
-      background-color: #28a745;
-      border-radius: 15px;
-      padding: 15px;
-    }
-
-    .contador {
-      text-align: center;
-      font-size: 1.6rem;
-      color: #0047AB;
-      margin: 30px 0;
-      background-color: #28a745;
-      border-radius: 30px;
-      padding: 30x;
-    }
-
-    #contador-tempo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #2d037b;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    .btn-mapa {
-      display: block;
-      margin: 15px auto;
-      background: linear-gradient(to bottom, #00aaff, #0077cc);
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    .presentes {
-      text-align: center;
-      list-style: none;
-      padding: 0;
-      font-size: 1.2rem;
-    }
-
-    .form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .form input,
-    .form textarea {
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-.form button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-.form button:hover {
-            background-color: #218838;
-        }
-
-.presentes {
-  font-size: 1.5rem;
-  font-family: Arial, sans-serif;
-  font-weight: 600;
-  text-align: center;
-  list-style: none;
-  padding: 0;
-  margin-bottom: 10px;
-  color: #160244c6;
 }
 
-.destaque {
-  color: rgb(27, 2, 83);
-  font-size: 1.8rem;
+.paragrafo,
+.novoparagrafo {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 20px 0;
+    background-color: #28a745;
+    border-radius: 15px;
+    padding: 15px;
+    color: rgb(10, 3, 113);
 }
+
 .contador {
-  text-align: center;
-  color: rgb(85, 0, 255);
-  font-size: 1.8rem;
-  margin: 30px 0;
+    text-align: center;
+    font-size: 1.6rem;
+    color: #0047AB;
+    margin: 30px 0;
+    background-color: #28a745;
+    border-radius: 30px;
+    padding: 30px;
 }
 
 #contador-tempo {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2d037b;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2d037b;
 }
-    
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+audio {
+    display: none;
+}
+
+.galeria {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 20px 0;
+}
+
+.galeria img {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    object-fit: cover;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn-mapa {
+    display: block;
+    margin: 15px auto;
+    background: linear-gradient(to bottom, #00aaff, #0077cc);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form input,
+.form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form button:hover {
+    background-color: #218838;
+}
